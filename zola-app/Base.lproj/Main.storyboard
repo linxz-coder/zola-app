@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="zola_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2024-11-27" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bXd-e9-wZh">
+                                <rect key="frame" x="45" y="99" width="76" height="18.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="我的zola-app" placeholder="Title" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="LQq-oS-zg5">
+                                <rect key="frame" x="45" y="137.66666666666666" width="168" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="小中" placeholder="Author" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Pw-e5-aOc">
+                                <rect key="frame" x="45" y="191.66666666666666" width="43.333333333333343" height="18.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jd2-fv-deB">
+                                <rect key="frame" x="45" y="288.33333333333337" width="303" height="414.33333333333337"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text"># 标题一
+
+从前，从前，有个人爱你很久。
+但偏偏，雨渐渐，大到我看你不见。</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name=".PingFangSC-Regular" family=".PingFang SC" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3a4-mt-RIf">
+                                <rect key="frame" x="45" y="232.33333333333334" width="151" height="28.000000000000028"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tags" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mPn-qO-ayb">
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="28"/>
+                                        <color key="backgroundColor" name="TagColor1"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="Nqi-MN-h7a"/>
+                                            <constraint firstAttribute="height" constant="28" id="gdb-HH-8Vw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tags" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RVj-1A-SGI">
+                                        <rect key="frame" x="53" y="0.0" width="45" height="28"/>
+                                        <color key="backgroundColor" name="TagColor2"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="3ju-1Y-LvR"/>
+                                            <constraint firstAttribute="height" constant="28" id="Mja-xm-o5S"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tags" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vhc-ae-Phn">
+                                        <rect key="frame" x="106" y="0.0" width="45" height="28"/>
+                                        <color key="backgroundColor" name="TagColor3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="JvJ-BA-pkl"/>
+                                            <constraint firstAttribute="height" constant="28" id="Oza-CT-GA3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yj6-jW-dVs">
+                                <rect key="frame" x="240" y="738.66666666666663" width="108" height="34.333333333333371"/>
+                                <color key="tintColor" name="AccentColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="SourceText"/>
+                                <connections>
+                                    <action selector="sourceTextPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n8R-IA-Dam"/>
+                                    <segue destination="dVx-g3-4GO" kind="presentation" identifier="goToSource" id="oOR-kg-dQS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKw-57-xrY">
+                                <rect key="frame" x="45" y="738.66666666666663" width="97" height="34.333333333333371"/>
+                                <color key="tintColor" name="AccentColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Zola sync">
+                                    <color key="baseBackgroundColor" red="0.28617762057294549" green="0.53495226905803483" blue="0.30564487339488317" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="zolaSyncPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9yt-iW-Dh9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0Pw-e5-aOc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="0zZ-Ml-Wra"/>
+                            <constraint firstItem="3a4-mt-RIf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="8g6-AT-N0x"/>
+                            <constraint firstItem="jd2-fv-deB" firstAttribute="top" secondItem="3a4-mt-RIf" secondAttribute="bottom" constant="28" id="9oE-jF-dhE"/>
+                            <constraint firstItem="yj6-jW-dVs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="240" id="AQp-MZ-xoq"/>
+                            <constraint firstItem="0Pw-e5-aOc" firstAttribute="top" secondItem="LQq-oS-zg5" secondAttribute="bottom" constant="20" id="E3d-eQ-Tft"/>
+                            <constraint firstItem="3a4-mt-RIf" firstAttribute="top" secondItem="0Pw-e5-aOc" secondAttribute="bottom" constant="22" id="Fs0-V6-3mw"/>
+                            <constraint firstItem="bXd-e9-wZh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="JKa-Xj-QlW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WKw-57-xrY" secondAttribute="bottom" constant="45" id="JsZ-bs-NU1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yj6-jW-dVs" secondAttribute="trailing" constant="45" id="OGc-hj-Rdb"/>
+                            <constraint firstItem="WKw-57-xrY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="PNq-Cq-35f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yj6-jW-dVs" secondAttribute="bottom" constant="45" id="bCx-Iy-ERz"/>
+                            <constraint firstItem="bXd-e9-wZh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="jMj-x9-ccA"/>
+                            <constraint firstItem="LQq-oS-zg5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="k5Y-O6-fj2"/>
+                            <constraint firstItem="jd2-fv-deB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="rMZ-Oq-PTz"/>
+                            <constraint firstItem="LQq-oS-zg5" firstAttribute="top" secondItem="bXd-e9-wZh" secondAttribute="bottom" constant="20" id="tEB-Q9-acL"/>
+                            <constraint firstItem="yj6-jW-dVs" firstAttribute="top" secondItem="jd2-fv-deB" secondAttribute="bottom" constant="36" id="tWv-YG-rL2"/>
+                            <constraint firstItem="WKw-57-xrY" firstAttribute="top" secondItem="jd2-fv-deB" secondAttribute="bottom" constant="36" id="xnO-zw-42j"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jd2-fv-deB" secondAttribute="trailing" constant="45" id="yZa-4l-o1t"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="authorInput" destination="0Pw-e5-aOc" id="19l-LA-sy7"/>
+                        <outlet property="contentInput" destination="jd2-fv-deB" id="iPr-xs-sMf"/>
+                        <outlet property="dateInput" destination="bXd-e9-wZh" id="nJf-Yn-W0T"/>
+                        <outlet property="tag1" destination="mPn-qO-ayb" id="IlV-6u-qdU"/>
+                        <outlet property="tag2" destination="RVj-1A-SGI" id="y90-6S-deN"/>
+                        <outlet property="tag3" destination="vhc-ae-Phn" id="8KP-kc-xrp"/>
+                        <outlet property="titleInput" destination="LQq-oS-zg5" id="ry7-d1-n3C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1075.5725190839694" y="0.0"/>
+        </scene>
+        <!--Source Text Controller-->
+        <scene sceneID="elB-jt-UNP">
+            <objects>
+                <viewController id="dVx-g3-4GO" customClass="SourceTextController" customModule="zola_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CMB-Tb-5DG">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rOc-1Q-ikp">
+                                <rect key="frame" x="44" y="73" width="304" height="657"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">+++
+title = "我对别人没有期待。为什么对自己的期待这么高？对自己的作品总不满意。"
+date = 2024-11-15
+authors = ["小中"]
+[taxonomies] 
+tags = ["期待"]
++++
+
+小时候，我总是期待自己能够考上清华或者北大，而无视我的教育环境和应该付出的努力。
+
+这样的期待既有益又有害。
+
+## 益处
+
+- 很强的责任感和追求卓越的倾向，促使你不断进步。
+
+## 害处
+
+- 过度苛责自己，不必要的内耗。
+- 容易把自己价值和工作成果挂钩，产生自我怀疑。
+- 过度比较，用别人的成就要求自己。
+- 过度害怕失败，唯成果论。
+
+## 怎么做？
+
+- 拆分目标，大目标变小目标。关注 **过程** ，而不是 **结果** 。
+
+- 反思自己的标准，以自己兴趣为主，不要在乎社会标准。
+
+- 失败并不可怕，就是旅途必经之路。
+</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FzU-Ga-HOb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="structureText" destination="rOc-1Q-ikp" id="Sfw-6b-QQj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dDr-Lb-34v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1897" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TagColor1">
+            <color red="0.75700002908706665" green="0.95300000905990601" blue="0.99199998378753662" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="TagColor2">
+            <color red="0.73299998044967651" green="0.95300000905990601" blue="0.83099997043609619" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="TagColor3">
+            <color red="0.96100002527236938" green="0.75300002098083496" blue="0.68999999761581421" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
