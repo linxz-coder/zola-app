@@ -16,6 +16,8 @@
 		8D7D5A7D2CF8BE7500155327 /* SourceTextController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7D5A7C2CF8BE7500155327 /* SourceTextController.swift */; };
 		8D7D5A802CF9FDA800155327 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8D7D5A7F2CF9FDA800155327 /* IQKeyboardManagerSwift */; };
 		8D7D5A862CFA0AEB00155327 /* Down in Frameworks */ = {isa = PBXBuildFile; productRef = 8D7D5A852CFA0AEB00155327 /* Down */; };
+		8DA200002CFF506100E679EC /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA2FFFF2CFF506100E679EC /* GitHubService.swift */; };
+		8DA200022CFF50B200E679EC /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8DA200012CFF50B200E679EC /* Config.xcconfig */; };
 		8DA2FFFE2CFB512C00E679EC /* SwiftDown in Frameworks */ = {isa = PBXBuildFile; productRef = 8DA2FFFD2CFB512C00E679EC /* SwiftDown */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,9 @@
 		8D7D5A742CF758CE00155327 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D7D5A762CF758CE00155327 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D7D5A7C2CF8BE7500155327 /* SourceTextController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceTextController.swift; sourceTree = "<group>"; };
+		8DA200012CFF50B200E679EC /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		8DA200032CFF536B00E679EC /* zola-app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "zola-app.entitlements"; sourceTree = "<group>"; };
+		8DA2FFFF2CFF506100E679EC /* GitHubService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,14 +69,17 @@
 		8D7D5A672CF758CC00155327 /* zola-app */ = {
 			isa = PBXGroup;
 			children = (
+				8DA200032CFF536B00E679EC /* zola-app.entitlements */,
 				8D7D5A682CF758CC00155327 /* AppDelegate.swift */,
 				8D7D5A6A2CF758CC00155327 /* SceneDelegate.swift */,
 				8D7D5A6C2CF758CC00155327 /* ViewController.swift */,
 				8D7D5A6E2CF758CC00155327 /* Main.storyboard */,
+				8DA2FFFF2CFF506100E679EC /* GitHubService.swift */,
 				8D7D5A7C2CF8BE7500155327 /* SourceTextController.swift */,
 				8D7D5A712CF758CE00155327 /* Assets.xcassets */,
 				8D7D5A732CF758CE00155327 /* LaunchScreen.storyboard */,
 				8D7D5A762CF758CE00155327 /* Info.plist */,
+				8DA200012CFF50B200E679EC /* Config.xcconfig */,
 			);
 			path = "zola-app";
 			sourceTree = "<group>";
@@ -145,6 +153,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DA200022CFF50B200E679EC /* Config.xcconfig in Resources */,
 				8D7D5A722CF758CE00155327 /* Assets.xcassets in Resources */,
 				8D7D5A752CF758CE00155327 /* Base in Resources */,
 				8D7D5A702CF758CC00155327 /* Base in Resources */,
@@ -158,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DA200002CFF506100E679EC /* GitHubService.swift in Sources */,
 				8D7D5A6D2CF758CC00155327 /* ViewController.swift in Sources */,
 				8D7D5A692CF758CC00155327 /* AppDelegate.swift in Sources */,
 				8D7D5A6B2CF758CC00155327 /* SceneDelegate.swift in Sources */,
@@ -189,6 +199,7 @@
 /* Begin XCBuildConfiguration section */
 		8D7D5A772CF758CE00155327 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DA200012CFF50B200E679EC /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -239,7 +250,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -296,7 +307,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -308,9 +319,12 @@
 		};
 		8D7D5A7A2CF758CE00155327 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DA200012CFF50B200E679EC /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "zola-app/zola-app.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TY5D58VV85;
@@ -321,6 +335,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,6 +343,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "online.linxz.zola-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -339,6 +356,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "zola-app/zola-app.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TY5D58VV85;
@@ -349,6 +367,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,6 +375,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "online.linxz.zola-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

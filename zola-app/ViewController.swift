@@ -22,19 +22,27 @@ class ViewController: UIViewController {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let defaultDate = dateFormatter.string(from: Date())
         
+        let tagsAreEmpty = (tag1.text ?? "").isEmpty &&
+        (tag2.text ?? "").isEmpty &&
+        (tag3.text ?? "").isEmpty
         
-        return
-       """
-       +++
-       title = \"\(titleInput.text ?? "")\"
-       date = \(dateInput.text?.isEmpty == false ? dateInput.text! : defaultDate)
-       authors = [\"\(authorInput.text ?? "")\"]
-       [taxonomies]
-       tags = [\"\(tag1.text ?? "")\", \"\(tag2.text ?? "")\", \"\(tag3.text ?? "")\"]
-       +++
-       
-       \(contentInput.text ?? "")
-       """
+        let taxonomySection = tagsAreEmpty ? "" : """
+            [taxonomies]
+            tags = ["\(tag1.text ?? "")", "\(tag2.text ?? "")", "\(tag3.text ?? "")"]
+            
+            """
+        
+        return """
+        +++
+        title = "\(titleInput.text ?? "")"
+        date = \(dateInput.text?.isEmpty == false ? dateInput.text! : defaultDate)
+        authors = ["\(authorInput.text ?? "")"]
+        \(taxonomySection)
+        +++
+        
+        \(contentInput.text ?? "")
+        
+        """
     }
     
     override func viewDidLoad() {
@@ -117,12 +125,27 @@ class ViewController: UIViewController {
     
     //上传content
     func uploadContent(filename: String, path: String) {
-       print("uploaded!")
+        let content = structureText
+        // 移除路径开头的斜杠（如果存在）
+        let cleanPath = path.hasPrefix("/") ? String(path.dropFirst()) : path
+        
+        GitHubService.shared.uploadContent(content: content,
+                                           filename: "\(filename).md",
+                                           path: cleanPath) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    self?.showAlert(message: "Successfully uploaded to \(path)!")
+                case .failure(let error):
+                    self?.showAlert(message: "Upload failed: \(error.localizedDescription)")
+                }
+            }
+        }
     }
     
     
     //upload button的通知事件
-    private func showAlert(message: String) {
+    func showAlert(message: String) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
@@ -130,29 +153,29 @@ class ViewController: UIViewController {
     
     
     //自定义路径
-    private func showCustomPathInput(filename: String) {
-            let customPathAlert = UIAlertController(title: "Enter Custom Path",
-                                                  message: "Start with /content/",
-                                                  preferredStyle: .alert)
-            
-            customPathAlert.addTextField { textField in
-                textField.placeholder = "/content/your-path"
-                textField.text = "/content/"
-            }
-            
-            let confirmAction = UIAlertAction(title: "Confirm", style: .default) { [weak self] _ in
-                guard let customPath = customPathAlert.textFields?.first?.text,
-                      !customPath.isEmpty else { return }
-                self?.uploadContent(filename: filename, path: customPath)
-            }
-            
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-            
-            customPathAlert.addAction(confirmAction)
-            customPathAlert.addAction(cancelAction)
-            
-            present(customPathAlert, animated: true)
+    func showCustomPathInput(filename: String) {
+        let customPathAlert = UIAlertController(title: "Enter Custom Path",
+                                                message: "Start with /content/",
+                                                preferredStyle: .alert)
+        
+        customPathAlert.addTextField { textField in
+            textField.placeholder = "/content/your-path"
+            textField.text = "/content/"
         }
+        
+        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { [weak self] _ in
+            guard let customPath = customPathAlert.textFields?.first?.text,
+                  !customPath.isEmpty else { return }
+            self?.uploadContent(filename: filename, path: customPath)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        customPathAlert.addAction(confirmAction)
+        customPathAlert.addAction(cancelAction)
+        
+        present(customPathAlert, animated: true)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToSource"{
@@ -161,7 +184,7 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    
 }
 
 //MARK: - UIViewDelegate
