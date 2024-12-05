@@ -22,15 +22,23 @@ class ViewController: UIViewController {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let defaultDate = dateFormatter.string(from: Date())
         
-        let tagsAreEmpty = (tag1.text ?? "").isEmpty &&
-        (tag2.text ?? "").isEmpty &&
-        (tag3.text ?? "").isEmpty
+        // 根据内容动态构建 tags 数组
+        var tags: [String] = []
+        if let tag1Text = tag1.text, !tag1Text.isEmpty {
+            tags.append(tag1Text)
+            if let tag2Text = tag2.text, !tag2Text.isEmpty {
+                tags.append(tag2Text)
+                if let tag3Text = tag3.text, !tag3Text.isEmpty {
+                    tags.append(tag3Text)
+                }
+            }
+        }
         
-        let taxonomySection = tagsAreEmpty ? "" : """
-            [taxonomies]
-            tags = ["\(tag1.text ?? "")", "\(tag2.text ?? "")", "\(tag3.text ?? "")"]
-            
-            """
+        let taxonomySection = tags.isEmpty ? "" : """
+                [taxonomies]
+                tags = ["\(tags.joined(separator: "\", \""))"]
+                
+                """
         
         return """
         +++
@@ -56,6 +64,32 @@ class ViewController: UIViewController {
         tag2.delegate = self
         tag3.delegate = self
         
+        // 初始隐藏 tag2 和 tag3
+        tag2.isHidden = true
+        tag3.isHidden = true
+        
+        // 添加文本变化监听器
+        tag1.addTarget(self, action: #selector(tag1TextChanged), for: .editingChanged)
+        tag2.addTarget(self, action: #selector(tag2TextChanged), for: .editingChanged)
+        
+    }
+    
+    func updateUI(){
+        dateInput.text = ""
+        titleInput.text = ""
+        //authorInput.text = ""
+        contentInput.text = ""
+        tag1.text = ""
+        tag2.text = ""
+        tag3.text = ""
+    }
+    
+    @objc func tag1TextChanged() {
+        tag2.isHidden = tag1.text?.isEmpty ?? true
+    }
+    
+    @objc func tag2TextChanged() {
+        tag3.isHidden = tag2.text?.isEmpty ?? true
     }
     
     
@@ -136,6 +170,7 @@ class ViewController: UIViewController {
                 switch result {
                 case .success:
                     self?.showAlert(message: "Successfully uploaded to \(path)!")
+                    self?.updateUI()
                 case .failure(let error):
                     self?.showAlert(message: "Upload failed: \(error.localizedDescription)")
                 }
